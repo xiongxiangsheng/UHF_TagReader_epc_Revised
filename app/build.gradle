@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        applicationId "com.kalewa.uhfr"
+        minSdkVersion 22
+        targetSdkVersion 22
+        ndk {
+            abiFilters "armeabi"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:20.0.0'
+//    compile files('libs/uhf_r_v1.0.jar')
+    compile files('libs/uhf-r-integration_3.jar')
+    compile files('libs/rfid.jar')
+}
